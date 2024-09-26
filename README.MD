@@ -3,7 +3,7 @@
 <h1> SONY VEGAS PRO INSTALLER </h1>
 </summary>
 <h3> Requirements: </h3>
-- The right version of MS .NET for the editor
+- The right version of MS .NET for the selected vegas
 <br>
 - A Vegas Pro installer (and diginsan)
 <br>
