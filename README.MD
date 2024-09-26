@@ -6,6 +6,8 @@
 - The right version of MS .NET for the editor
 <br>
 - A Vegas Pro installer 
+<br>
+- Wine (and a custom prefix for better experience)
 <h6>note: this script is only compatible with vegas pros that are patchable with diginsan</h6>
 <h6>note 2: it has not been properly tested yet</h6>
 </div>
