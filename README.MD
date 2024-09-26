@@ -5,7 +5,7 @@
 <h3> Requirements: </h3>
 - The right version of MS .NET for the editor
 <br>
-- A Vegas Pro installer 
+- A Vegas Pro installer (and diginsan)
 <br>
 - Wine (and a custom prefix for better experience)
 <h6>note: this script is only compatible with vegas pros that are patchable with diginsan</h6>
