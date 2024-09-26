@@ -2,9 +2,9 @@ main(){
 clear
 CHOICE=""
 echo "Sony Vegas Pro installer"
-echo "Made with hate by Sonka"
+echo "Made with love by Sonka"
 echo ""
-echo "Script version: \"Pre-release\""
+echo "Script version: V1"
 echo ""
 echo "1) Create a wineprefix"
 echo "2) Install dotnet & vegas pro"
@@ -33,18 +33,48 @@ while true; do
      read
      break
      ;;
+    2)
+    WINEPREFIX="$HOME/.wine64"
+    export WINEARCH=win64
+    export WINEPREFIX="$WINEPREFIX"
+    WINEPREFIX="$WINEPREFIX" winetricks win7
+    echo ""
+    echo "Done setting up default wineprefix! Press Enter to continue!"
+    read
+    break
+    ;;
     esac
+    export WINEPREFIX="$WINEPREFIX"
 done
 }
 
 install(){
-    DNPATH=""
-    echo "Enter .NET installer's path."
-    read DNPATH
-    wine "$DNPATH"
+    DNVER=""
+    echo "Enter the .NET version you want to install without dots."
+    read DNVER
+    WINEPREFIX="$WINEPREFIX" winetricks --force dotnet"$DNVER" 
+    echo ".NET Successfully installed!(or not)"
+    echo "Enter the Vegas Pro's setup path."
+    VEGASPATH=""
+    read VEGASPATH
+    WINEPREFIX="$WINEPREFIX" wine "$VEGASPATH"
+    echo "Vegas Pro successfully installed! (or not)"
     read
 }
 
+add(){
+    echo "Install/open anything else you want."
+    PATH=""
+    read PATH
+    WINEPREFIX="$WINEPREFIX" wine "$PATH"
+    echo "Done."
+    read
+}
+
+auto(){
+    echo "soon, im lazy"
+    read
+}
 
 while true; do 
     main
@@ -55,9 +85,16 @@ while true; do
         2)
         install
         ;;
+        3)
+        add
+        ;;
+        4)
+        auto
+        ;;
         5)
         break
         ;;
     esac
 done
 
+#100th line yippee
