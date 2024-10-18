@@ -7,12 +7,12 @@ main() {
     echo " Made with love by Sonka"
     echo "=============================="
     echo ""
-    echo "Script version: V2"
+    echo "Script version: V2.1"
     echo ""
     echo "1) Create a Wineprefix"
     echo "2) Install .NET & Vegas Pro"
     echo "3) Install additional software"
-    echo "4) Post-install fix"
+    echo "4) Post-install fix (for MAGIX Vegas pro-s)"
     echo "5) Auto install"
     echo "6) Exit"
     echo ""
@@ -35,7 +35,7 @@ wprefix() {
             WINEPREFIX="$PREFIXDIR"
             echo "Creating a 64-bit Wineprefix at $WINEPREFIX..."
             WINEARCH=win64 WINEPREFIX=$WINEPREFIX winetricks win10
-            WINEPREFIX= winetricks --force alldlls="builtin"
+#           WINEPREFIX= winetricks --force alldlls="builtin"
 #           killall wine wine64
             echo "Wineprefix created successfully!"
             ;;
@@ -118,8 +118,12 @@ add() {
 }
 
 post() {
-    WINEPREFIX="$WINEPREFIX" winetricks -q sandbox
-    echo "Post install changes applied, press enter to continue."
+    
+    rm -rf $WINEPREFIX/drive_c/windows/system32/gecko
+    rm -rf $WINEPREFIX/drive_c/windows/syswow64/gecko
+
+    echo "Post install changes applied."
+    read -p "Press enter to continue..."
 }
 
 
