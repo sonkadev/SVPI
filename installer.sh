@@ -7,14 +7,13 @@ main() {
     echo " Made with love by Sonka"
     echo "=============================="
     echo ""
-    echo "Script version: V2.1"
+    echo "Script version: V2.2"
     echo ""
     echo "1) Create a Wineprefix"
     echo "2) Install .NET & Vegas Pro"
     echo "3) Install additional software"
-    echo "4) Post-install fix (for MAGIX Vegas pro-s)"
-    echo "5) Auto install"
-    echo "6) Exit"
+    echo "4) Auto install"
+    echo "5) Exit"
     echo ""
     read -p "Choose an option: " CHOICE
 }
@@ -81,16 +80,6 @@ install() {
     WINEPREFIX="$WINEPREFIX" winetricks --force dotnet"$DNVER"
     echo ".NET installation complete (or failed)."
 
-    read -p "Install MSVC Runtime 2013 & 2015? (y/n) "  CHC
-    case $CHC in
-        Y|y|YES|yes|Yes)
-        WINEPREFIX="$WINEPREFIX" winetricks vcrun2013 vcrun2015
-        ;;
-        *)
-        echo "k"
-        ;;
-    esac
-
     read -p "Install fonts? (y/n) "  CHC
     case $CHC in
         Y|y|YES|yes|Yes)
@@ -117,14 +106,7 @@ add() {
     read -p "Press Enter to continue..."
 }
 
-post() {
-    
-    rm -rf $WINEPREFIX/drive_c/windows/system32/gecko
-    rm -rf $WINEPREFIX/drive_c/windows/syswow64/gecko
 
-    echo "Post install changes applied."
-    read -p "Press enter to continue..."
-}
 
 
 auto() {
@@ -138,9 +120,8 @@ while true; do
         1) wprefix ;;
         2) install ;;
         3) add ;;
-        4) post ;;
-        5) auto ;;
-        6) echo "Exiting..."; break ;;
+        4) auto ;;
+        5) echo "Exiting..."; break ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
 done
