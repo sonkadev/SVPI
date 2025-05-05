@@ -7,7 +7,7 @@ main() {
     echo " Made with love by Sonka"
     echo "=============================="
     echo ""
-    echo "Script version: V2.2"
+    echo "Script version: V2.21"
     echo ""
     echo "1) Create a Wineprefix"
     echo "2) Install .NET & Vegas Pro"
@@ -99,9 +99,9 @@ install() {
 
 add() {
     echo "!!!For some unknown reason, this part is not functional!!!"
-    read -p "Enter the full path to the software you want to install: " PATH
-    echo "Installing software from $PATH..."
-    WINEPREFIX="$WINEPREFIX" wine "$PATH"
+    read -p "Enter the full path to the software you want to install: " SOFTWARE_PATH
+    echo "Installing software from $SOFTWARE_PATH..."
+    WINEPREFIX="$WINEPREFIX" wine "$SOFTWARE_PATH"
     echo "Installation complete."
     read -p "Press Enter to continue..."
 }
