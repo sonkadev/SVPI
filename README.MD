@@ -36,7 +36,7 @@
 
 
 <details>
-<summary> Magix VEGAS Pro installation guide </summary>
+<summary> VEGAS Pro 14-19 installation guide </summary>
 
 #### First of all, do NOT use LightDM, using it can cause more problems with VEGAS Pro, and can make it crash for no fucking reason.
 Now you need to do the following steps:
