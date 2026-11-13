@@ -1,7 +1,7 @@
 ![banner](banner.png)
 
 > [!WARNING]
-> The last version that SVPI was "officially" tested with was Vegas Pro 22. Chances are versions higher than that will not work with this script.
+> The last version that SVPI was "officially" tested with was Vegas Pro 22. Versions higher than that may not work with this script.
 
 <div id="user-content-toc">
   <ul align="center">
